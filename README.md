@@ -118,6 +118,7 @@ This will start the server which can be listen on port 80.
 > To use custom port set environment variable `PORT=<custom_port>` in `.env` file.
 
 ## Heroku Deployment
+[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/WeCodeWebApps/email-notification-microservice)
 
 # Issue
 

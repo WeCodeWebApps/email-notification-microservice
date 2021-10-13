@@ -1,0 +1,18 @@
+{
+    "name": "Email & Notification Microservice",
+    "description": "A simple email and push notification microservice made with Django.",
+    "repository": "https://github.com/WeCodeWebApps/email-notification-microservice",
+    "keywords": ["Docker", "microservice", "django", "email", "notification"],
+    "addons": ["heroku-postgresql"],
+    "stack": "container",
+    "env": {
+        "SECRET_KEY": {
+            "description": "Django's SECRET_KEY setting",
+            "generator": "secret"
+        },
+        "ALLOWED_HOSTS": {
+            "default": "*",
+            "description": "Fill allowed host name as <app_name>.herokuapp.com"
+        }
+    }
+  }
