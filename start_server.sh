@@ -17,7 +17,7 @@ set -o nounset
 #   exit 1
 # fi
 
-echo "using $DJANGO_SETTINGS_MODULE"
+# echo "using $DJANGO_SETTINGS_MODULE"
 
 # Run python specific scripts:
 # Running migrations in startup script might not be the best option, see:
