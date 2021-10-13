@@ -9,7 +9,7 @@ services:
       - static_volume:/microservice/static
       - media_volume:/microservice/media
     environment:
-      - 80
+      - PORT=80
     ports:
       - $PORT:$PORT
     restart: always
