@@ -11,8 +11,8 @@
             "generator": "secret"
         },
         "ALLOWED_HOSTS": {
-            "default": "*",
-            "description": "Fill allowed host name as <app_name>.herokuapp.com"
+            "value": "*",
+            "description": "Leave as it is or fill as <app_name>.herokuapp.com"
         }
     }
   }

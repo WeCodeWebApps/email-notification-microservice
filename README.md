@@ -120,6 +120,10 @@ This will start the server which can be listen on port 80.
 ## Heroku Deployment
 [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/WeCodeWebApps/email-notification-microservice)
 
+1. Click on above button to install app on [heroku](https://heroku.com).
+2. Fill app name and allowed hosts (Optional) and click deploy.
+3. You can also set other config variables like DEBUG, etc in settings.
+
 # Issue
 
 # Contribution
