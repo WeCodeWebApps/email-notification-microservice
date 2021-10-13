@@ -4,8 +4,14 @@ services:
   web:
     image: email_notification_microservice
     build: .
-    command: python manage.py runserver 0.0.0.0:8000
+    command: sh ./start_server.sh
     volumes:
-      - .:/mircroservice
+      - static_volume:/microservice/static
+      - media_volume:/microservice/media
     ports:
       - 8000:8000
+    restart: always
+
+volumes:
+  static_volume:
+  media_volume:

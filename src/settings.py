@@ -15,7 +15,7 @@ import environ
 
 # taken from https://github.com/joke2k/django-environ
 env = environ.Env(
-    DEBUG=(bool, False),
+    DEBUG=(bool, True),
     ALLOWED_HOSTS=(str, "127.0.0.1,localhost"),
     SECRET_KEY=(
         str,
@@ -89,6 +89,7 @@ WSGI_APPLICATION = "src.wsgi.application"
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
 DATABASES = {"default": env.db(default="sqlite:///db.sqlite3")}
+print("Using database:", DATABASES["default"])
 
 
 # Password validation

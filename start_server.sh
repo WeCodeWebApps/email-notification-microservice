@@ -2,6 +2,8 @@
 
 # inpired from https://github.com/wemake-services/wemake-django-template/blob/master/%7B%7Bcookiecutter.project_name%7D%7D/docker/django/gunicorn.sh
 
+export DJANGO_SETTINGS_MODULE="src.settings"
+
 set -o errexit
 set -o nounset
 
@@ -17,7 +19,7 @@ set -o nounset
 #   exit 1
 # fi
 
-# echo "using $DJANGO_SETTINGS_MODULE"
+echo "using $DJANGO_SETTINGS_MODULE"
 
 # Run python specific scripts:
 # Running migrations in startup script might not be the best option, see:
