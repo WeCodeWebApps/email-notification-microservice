@@ -1,4 +1,6 @@
-# Email & Push notification microservice
+[![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
+
+
 A simple email and push notification microservice made with Django.
 
 # Features
@@ -63,7 +65,36 @@ A simple email and push notification microservice made with Django.
    poetry run python manage.py runserver
    ```
 
-# Testing
+## Development Guidelines
+
+### Dependency Management
+
+We are using [Poetry](https://python-poetry.org) as our default package manager for managing all Python dependencies.
+
+- Add any dependency using.
+  ```bash
+  poetry add <dependency name>
+  ```
+- If add any new dependency which is required in production update `requirements.txt` file also.
+  ```bash
+  poetry export --without-hashes -o requirements.txt
+  ```
+> **Important:** Please insure that `requirements.txt` does not includes dev dependencies as it increase the container size of application otherwise delete `poetry.lock` and run `poetry install` to generate the new `poetry.lock` file, then follow above procedure to get it done.
+
+- Add dependency as dev dependency if not required in production.
+  ```bash
+  poetry add --dev <dev dependency name>
+  ```
+
+### Pre-Check before pushing the code to gitHub
+1. Insure that you have not included any confidential file or data before pushing.
+2. Write the test if possible and insure all test case passes before pushing.
+3. Make sure your code is well formatted with `black` before pushing to avoid build error.
+   ```bash
+   black . # run inside base directory
+   ```
+
+## Testing Guidelines
 
 # Deployment
 
