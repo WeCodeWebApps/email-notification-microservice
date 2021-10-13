@@ -25,7 +25,7 @@ set -o nounset
 # docs/pages/template/production-checklist.rst
 python manage.py migrate --noinput
 # python manage.py collectstatic --noinput
-python manage.py runserver 0.0.0.0:80
+python manage.py runserver 0.0.0.0:$PORT
 # python /code/manage.py compilemessages  # not using translation for now
 
 # Start gunicorn:
