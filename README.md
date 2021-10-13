@@ -36,7 +36,7 @@ A simple email and push notification microservice made with Django.
 
 1. Clone this repository.
    ```bash
-   git clone https://github.com/namantam1/email-notification-microservice
+   git clone https://github.com/WeCodeWebApps/email-notification-microservice
    cd email-notification-microservice
    ```
 2. Run this command to build and start docker container.
@@ -48,7 +48,7 @@ A simple email and push notification microservice made with Django.
 
 1. Clone this repository.
    ```bash
-   git clone https://github.com/namantam1/email-notification-microservice
+   git clone https://github.com/WeCodeWebApps/email-notification-microservice
    cd email-notification-microservice
    ```
 2. Install [Poetry](https://python-poetry.org/docs/#installation).
@@ -124,3 +124,4 @@ This will start the server which can be listen on port 80.
 # Contribution
 
 # License
+This repository is licensed under the [MIT License](./LICENSE)
