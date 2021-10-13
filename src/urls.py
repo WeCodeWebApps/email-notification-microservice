@@ -24,5 +24,8 @@ urlpatterns = (
         path("admin/", admin.site.urls),
     ]
     + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+    # This is just an improvisation to serve static file
+    # from django level. It is recommended to serve from
+    # server level at nginx.
     + staticfiles_urlpatterns()
 )

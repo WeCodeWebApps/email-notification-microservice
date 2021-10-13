@@ -67,6 +67,15 @@ A simple email and push notification microservice made with Django.
 
 ## Development Guidelines
 
+### Configuration Variables
+All the configuration like secret key, database, etc are all setup using [django-environ](https://github.com/joke2k/django-environ), all these configuration are take from `.env` file in the root directory.
+
+To setup configuration, look into `.env.dist` file.
+
+While local development copy `.env.dist` into `.env` file with your own requirements.
+
+> **NOTE:** Please don't commit `.env` file into version control.
+
 ### Dependency Management
 
 We are using [Poetry](https://python-poetry.org) as our default package manager for managing all Python dependencies.
@@ -97,6 +106,18 @@ We are using [Poetry](https://python-poetry.org) as our default package manager 
 ## Testing Guidelines
 
 # Deployment
+
+## Server Deployment
+To deploy on server like EC2, Google cloud, etc clone the master branch, set config variables in `.env` file and run.
+```bash
+docker-compose -f docker-compose.prod.yaml up -d
+```
+
+This will start the server which can be listen on port 80.
+
+> To use custom port set environment variable `PORT=<custom_port>` in `.env` file.
+
+## Heroku Deployment
 
 # Issue
 
