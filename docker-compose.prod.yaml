@@ -8,10 +8,8 @@ services:
     volumes:
       - static_volume:/microservice/static
       - media_volume:/microservice/media
-    environment:
-      - PORT=80
     ports:
-      - $PORT:$PORT
+      - ${PORT:-80}:${PORT:-80}
     restart: always
 
 volumes:
