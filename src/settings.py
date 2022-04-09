@@ -40,18 +40,24 @@ SECRET_KEY = env("SECRET_KEY")
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = env("DEBUG")
 
-ALLOWED_HOSTS = env("ALLOWED_HOSTS").split(",")
+ALLOWED_HOSTS = env("ALLOWED_HOSTS", list)
 
 
 # Application definition
 
 INSTALLED_APPS = [
+    # django inbuilt app
     "django.contrib.admin",
     "django.contrib.auth",
     "django.contrib.contenttypes",
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
+    # internal apps
+    "src.celery",
+    "email_service.apps.EmailServiceConfig",
+    # external apps
+    "rest_framework",
 ]
 
 MIDDLEWARE = [
@@ -114,15 +120,15 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/3.2/topics/i18n/
 
-LANGUAGE_CODE = "en-us"
+LANGUAGE_CODE = env("LANGUAGE_CODE", default="en-us")
 
-TIME_ZONE = "Asia/Kolkata"
+TIME_ZONE = env("TIME_ZONE", default="Asia/Kolkata")
 
-USE_I18N = True
+USE_I18N = env.bool("USE_I18N", default=True)
 
-USE_L10N = True
+USE_L10N = env.bool("USE_L10N", default=True)
 
-USE_TZ = True
+USE_TZ = env.bool("USE_TZ", default=True)
 
 
 # Static files (CSS, JavaScript, Images)
@@ -137,3 +143,9 @@ STATIC_ROOT = BASE_DIR / "static"
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
+
+# Celery Configuration Options
+CELERY_BROKER_URL = env("CELERY_BROKER_URL", default="")
+CELERY_TIMEZONE = env("CELERY_TIMEZONE", default="Asia/Kolkata")
+CELERY_TASK_TRACK_STARTED = env.bool("CELERY_TASK_TRACK_STARTED", default=True)
+CELERY_TASK_TIME_LIMIT = env.int("CELERY_TASK_TIME_LIMIT", default=30 * 60)

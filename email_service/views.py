@@ -1,3 +1,10 @@
-from django.shortcuts import render
+from rest_framework.generics import GenericAPIView as APIView
 
-# Create your views here.
+from .serializer import MailSerializer
+
+
+class SendEmailView(APIView):
+    serializer_class = MailSerializer
+
+    def post(self, *args, **kwargs):
+        pass

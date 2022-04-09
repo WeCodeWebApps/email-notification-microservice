@@ -76,6 +76,15 @@ While local development copy `.env.dist` into `.env` file with your own requirem
 
 > **NOTE:** Please don't commit `.env` file into version control.
 
+### Celery Worker
+We have used [celery](https://docs.celeryproject.org/en/stable/) to queue and process task in background.
+
+**How to run celery worker in local environment?**
+```bash
+celery -A src worker -l INFO
+```
+
+
 ### Dependency Management
 
 We are using [Poetry](https://python-poetry.org) as our default package manager for managing all Python dependencies.
