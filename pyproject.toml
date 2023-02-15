@@ -6,7 +6,7 @@ authors = ["Naman Tamrakar <namantam1@gmail.com>"]
 
 [tool.poetry.dependencies]
 python = "^3.7"
-Django = "^3.2.8"
+Django = "^3.2.18"
 django-environ = "^0.7.0"
 gunicorn = "^20.1.0"
 psycopg2-binary = "^2.9.1"
